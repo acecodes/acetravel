@@ -1,0 +1,16 @@
+<div class="results" ng-show="app.suggestion.name !== undefined">
+    <h1 class="country-name">Suggestion: <strong>{{ app.suggestion.name }}</strong></h1>
+    <div class="pics">
+        <img src="img/pics/{{ app.suggestion.name }}.jpg">
+    </div>
+    <hr />
+    <info></info>
+    <hr />
+    <distance></distance>
+    <hr />
+    <form ng-submit="app.startOver(app)">
+        <div id="start-over">
+            <input class="btn btn-lg btn-primary" type="submit" value="Start Over">
+        </div>
+    </form>
+</div>

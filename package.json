@@ -1,0 +1,10 @@
+{
+  "name": "AceTravel",
+  "version": "1.0.0",
+  "description": "Needs-based travel app.",
+  "main": "js/app.js",
+  "dependencies": {
+    "connect": "3.4.0",
+    "serve-static": "1.10.0"
+  }
+}

@@ -1,0 +1,11 @@
+<form ng-submit="app.getDistance(app, user.origin, app.suggestion.capital)">
+    <h3>What city are you currently in?</h3>
+    <div><input ng-model="user.origin" class="form" required></div>
+    <div class="buttons" ng-hide="app.loading.distance"><input class="btn btn-lg btn-success" type="submit" value="Get Distance"></div>
+</form>
+<div ng-show="app.distance !== null">
+    <h1>You are {{ app.distance | number }} miles from {{ app.suggestion.capital }}.</h1>
+</div>
+<div id="loading-distance" ng-show="app.loadingDistance === true">
+    <span us-spinner="{radius:5, width:5, length: 8}" spinner-key="distance"></span>
+</div>

@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-3">&nbsp;</div>
+    <div class="col-md-3">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Country Data</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Region: <strong>{{ app.suggestion.region }}</strong></h3>
+                <h3>Capital: <strong>{{ app.suggestion.capital }}</strong></h3>
+                <h3>Population: <strong>{{ app.suggestion.population | number }}</strong></h3>
+                <h3>Currency: <strong>{{ app.suggestion.currencies[0] }}</strong></h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Affordability</h3>
+            </div>
+            <div class="panel-body">
+                <h3>Get <strong>USD-{{ app.suggestion.currencies[0] }}</strong> Exchange Rate</h3>
+                <form ng-submit="app.exchangeRateFunc(app, app.suggestion.currencies[0])">
+                    <div id="loading-currencies" ng-show="app.loadingCurrencies === true">
+                        <span us-spinner="{radius:5, width:5, length: 8}" spinner-key="currencies" ng-show="app.loadingCurrencies === true"></span>
+                    </div>
+                    <h1 id="compare" ng-show="app.exchangeRate !== null && app.loadingCurrencies === false">{{ app.exchangeRate.exchange_rate }}</h1>
+                    <input class="btn btn-lg btn-success buttons" type="submit" value="Compare">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">&nbsp;</div>
+</div>
